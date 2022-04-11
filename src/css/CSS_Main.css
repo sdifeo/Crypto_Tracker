@@ -1,0 +1,154 @@
+body{
+    background-color: #11151C !important;
+    color: whitesmoke !important;
+    
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.topnavbarContainer{
+    text-align: center;
+}
+
+.topnavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: normal;
+    align-content: normal;
+}
+
+.header{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.addBtn{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+}
+
+@media screen and (max-width: 1024px) {
+    header{
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .crypto-card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+
+    .app-container{
+        /* border: none !important; */
+        width: 90% !important;
+
+        -webkit-box-shadow: 0px 0px 10px 1px whitesmoke !important; 
+        box-shadow: 0px 0px 10px 1px whitesmoke !important;
+        
+    }
+
+    .header{
+        margin: 0;
+    }
+
+    .add-crypto-card-space{
+        padding-left: 10px !important;
+    }
+
+    .card{
+        width: 12rem !important;
+    }
+    
+}
+
+@media screen and (max-width: 970px) {
+    header{
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .crypto-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+
+    .app-container{
+        /* border: none !important; */
+        width: 90% !important;
+
+        -webkit-box-shadow: 0px 0px 10px 1px whitesmoke !important; 
+        box-shadow: 0px 0px 10px 1px whitesmoke !important;
+        
+    }
+
+    .header{
+        margin: 0;
+    }
+
+    .add-crypto-card-space{
+        padding-left: 10px !important;
+    }
+
+    .card{
+        width: 12rem !important;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .header{
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    .crypto-card-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+
+    .app-container{
+        border: none !important;
+        width: 300px !important;
+
+        -webkit-box-shadow: 0px 0px 0px 0px whitesmoke !important; 
+        box-shadow: 0px 0px 0px 0px blueviolet !important;
+        
+    }
+
+    .crypto-card-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+
+    .header{
+        margin: 0;
+    }
+
+    .add-crypto-card-space{
+        padding-left: 10px !important;
+    }
+
+    .card{
+        width: 12rem !important;
+    }
+}

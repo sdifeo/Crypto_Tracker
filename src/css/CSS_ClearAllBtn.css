@@ -1,0 +1,16 @@
+.clearBtn-container{
+    padding-top: 12px;
+    padding-right: 25px;
+    
+
+}
+
+.clearAllBtn{
+    border: none;
+    background-color: #EE6C4D !important;
+    border-radius: 3px;
+    color: white;
+
+    padding: 3px 9px 3px 9px;
+    font-size: 1.0rem;
+}

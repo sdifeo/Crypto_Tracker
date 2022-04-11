@@ -1,0 +1,15 @@
+.sidebar-container{
+    
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+    width: 300px;
+    border-radius: 15px;
+    height: 100%;
+    /* background-color: azure; */
+    border: 1px solid whitesmoke;
+}
