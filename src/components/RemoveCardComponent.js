@@ -1,12 +1,12 @@
 import React from 'react'
-import { MdRemoveCircleOutline } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
 import { useEffect } from 'react';
 
-const RemoveCardComponent = ({removeCard, id}) => { 
+const RemoveCardComponent = ({removeCard, id, index}) => { 
 
   return (
     <div>
-        <MdRemoveCircleOutline id={id} onClick={removeCard} size={30}></MdRemoveCircleOutline>
+        <AiOutlineDelete index={index} id={id} onClick={(e) => removeCard(e)} size={30}></AiOutlineDelete>
     </div>
   )
 }

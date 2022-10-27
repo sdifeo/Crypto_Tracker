@@ -42,20 +42,22 @@ function App() {
 
   }
 
-  const removeCard = (e) => {
-    console.log(e)
+  const removeCard = (index) => {
+    console.log(index)
     console.log(cards)
 
-    // cards.splice(0, 1)
+    setCards([...cards.slice(0, index), ...cards.slice(index+1, cards.length)])
   }
 
   const getSelectedCoinPrice = async (selectedId) => {
-    var resp = await fetch("/getCoin/" + selectedId);
-    var json = await resp.json();
-    var price = json.data[selectedId].quote["USD"].price;
-    setUpdatedPrice(price)
+    var resp = await fetch("/getCoin/" + selectedId)
+    var json = await resp.json()
+    console.log(json)
+    var price = await json.data[selectedId].quote["USD"].price;
+    var percent_change_24h = await json.data[selectedId].quote["USD"].percent_change_24h
+    await setUpdatedPrice(price)
 
-    return price;
+    return [price, percent_change_24h];
   }
 
   const addCryptoCard = async (coin, coinId) => {
@@ -66,10 +68,11 @@ function App() {
     }).find(element => element === coinId))
 
     if (foundId === undefined) {
-      var price = await getSelectedCoinPrice(coinId)
-      price = price.toFixed(2)
+      var result = await getSelectedCoinPrice(coinId)
+      var price = result[0].toFixed(2)
+      var percent_change_24h = result[1]
       const coinName = coin
-      const newCard = { price, coinName, id }
+      const newCard = { price, coinName, id, percent_change_24h }
 
       setCards(cards => [...cards, newCard])
     }
@@ -93,12 +96,13 @@ function App() {
         <Header></Header>
 
         <div className="topnavbar">
-            <ClearAllBtn clearAllCards={clearAllCards}></ClearAllBtn>
 
-            <div className="addBtn">
-              <AddCryptoCardBtn modalpress={buttonModalPress}></AddCryptoCardBtn>
-            </div>
+          <div className="addBtn">
+            <AddCryptoCardBtn modalpress={buttonModalPress}></AddCryptoCardBtn>
           </div>
+          <ClearAllBtn clearAllCards={clearAllCards}></ClearAllBtn>
+
+        </div>
 
       </div>
       <div className="app-container">

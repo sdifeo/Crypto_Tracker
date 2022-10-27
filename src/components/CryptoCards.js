@@ -7,13 +7,15 @@ const CryptoCards = ({cards, getSelectedCoinPrice, removeCard}) => {
     return (
         <div className="crypto-card-grid">
 
-            {cards.map((card) =>
-            <Cards key={card.id}
+            {cards.map((card, index) =>
+            <Cards key={index}
+                    index={index}
                     cardName={card.coinName}
                     cardPrice = {card.price}
                     id={card.id}
                     getSelectedCoinPrice={getSelectedCoinPrice}
-                    // removeCard={removeCard}
+                    percent_change_24h = {card.percent_change_24h}
+                    removeCard = {removeCard}
                      />
             )}
         </div>
